@@ -1,0 +1,153 @@
+{% extends 'base.html' %} {% block title%} Elecmedics {% endblock title %} {% block body_data %} {% load static %}
+
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<style>
+    .order-card {
+        color: #fff;
+    }
+
+    .bg-c-blue {
+        background: linear-gradient(45deg, #4099ff, #73b4ff);
+    }
+
+    .bg-c-green {
+        background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+    }
+
+    .bg-c-yellow {
+        background: linear-gradient(45deg, #FFB64D, #ffcb80);
+    }
+
+    .bg-c-pink {
+        background: linear-gradient(45deg, #FF5370, #ff869a);
+    }
+
+
+    .card {
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+        box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+        border: none;
+        margin-bottom: 30px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+        padding: 25px;
+    }
+
+    .order-card i {
+        font-size: 26px;
+    }
+
+    .f-left {
+        float: left;
+    }
+
+    .f-right {
+        float: right;
+    }
+</style>
+
+<div class="well p-5">
+    <!-- <div class="row">
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Doctors</h6>
+                    <h2 class="text-right"><i class="fas fa-user-nurse f-left"></i><span>1</span></h2>
+                    <p class="m-b-0">Available Doctors<span class="f-right">1</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Patients</h6>
+                    <h2 class="text-right"><i class="fas fa-clipboard-list f-left"></i><span>486</span></h2>
+                    <p class="m-b-0">Patients Today<span class="f-right">40</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Appointments</h6>
+                    <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>136</span></h2>
+                    <p class="m-b-0">Appointments Today<span class="f-right">7</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Revenue</h6>
+                    <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>Rs. 4256000</span></h2>
+                    <p class="m-b-0">Revenue Today<span class="f-right">Rs. 15320</span></p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="row p-5"> -->
+    <!--     <a href = "doctors" class="card text-white bg-info mb-3 text-center col-4 m-5" style="max-width: 18rem;">
+
+            <div class="card-body">
+              <h1 class="card-title">Doctor</h1>
+              <p class="card-text">Click on this box to manage Doctors</p>
+            </div>
+        </a> -->
+
+    <!-- <a href="" class="card text-white bg-info mb-3 text-center col-4 " style="max-width: 18rem;">
+            <div class="card-body">
+                <h3 class="card-title">New Patient</h3>
+                <p class="card-text">Click on this box to add new Patients</p>
+            </div>
+        </a> -->
+
+    <!-- <a href="" class=" col-1 " style="max-width: 18rem;"> -->
+    <!-- <div class="card-header">Add Doctor</div> -->
+    <!-- <div class="card-body">
+                <h3 class="card-title">New Patient</h3>
+                <p class="card-text">Click on this box to add new Patients</p>
+            </div> -->
+    <!-- </a> -->
+    <!-- 
+        <a href="" class="card text-white bg-info mb-3 text-center col-4 " style="max-width: 18rem;">
+
+            <div class="card-body">
+                <h3 class="card-title">Existing Patients</h3>
+                <p class="card-text">Click on this box to manage Existing Patients</p>
+            </div>
+        </a> -->
+
+    <!-- <a href = "" class="card text-white bg-info mb-3 text-center col-4 m-5" style="max-width: 18rem;">
+
+    <div class="card-body">
+        <h1 class="card-title">Bills</h1>
+        <p class="card-text">Click on this box to manage Bills</p>
+    </div>
+    </a> -->
+
+    <!-- </div> -->
+
+    <div class="jumbotron">
+        <h1 class="display-4">{% now "jS F Y H:i" %}</h1>
+        <p class="lead">Hi there! Click on any of the below buttons to add new patient or add prescription for existing
+            patients.</p>
+        <hr class="my-4">
+        <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="newpatient" role="button">New Patient</a>
+            <a class="btn btn-primary btn-lg" href="existingpatient" role="button">Existing Patient</a>
+        </p>
+    </div>
+
+</div>
+
+{% endblock body_data %}

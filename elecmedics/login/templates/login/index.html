@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <!-- <link rel="icon" href="{% static 'assets/favicon.ico'%}"> -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hk-grotesk.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </script>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<title>
+  Elec Medics
+</title>
+
+</head>
+
+<body style=" background-color:#f0f0f0">
+
+  <form action="" method="POST" class="vh-100">
+    {% csrf_token %}
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem">
+            <div class="card-body p-5 text-center">
+              <h1>
+                <!-- <img
+                            src="{% static '../elecmedics.png'%}"
+                            style="width: 75%; height: 75%"/> -->
+                Elecmedics
+              </h1>
+              <h3 class="mb-5"></h3>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="typeEmailX-2" name="email" class="form-control form-control-lg"
+                  placeholder="User Name" />
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="password" id="typePasswordX-2" name="password" class="form-control form-control-lg"
+                  placeholder="Password" />
+              </div>
+
+              <button class="btn btn-outline-success btn-lg btn-block" type="submit" style="width: 100%">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

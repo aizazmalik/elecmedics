@@ -1,0 +1,104 @@
+{% extends 'base.html' %} {% block title%} Elecmedics {% endblock title %} {% block body_data %} {% load static %}
+
+
+
+<div class="container p-5">
+
+    <div class="card">
+        <div class="card-header">
+            Add new Patient
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Please fill the form to add prescription for an existing patient</h5>
+            <form method="post" action="/app/addnewprescription/">
+
+                <div class="form-group">
+                    <label for="nameInput">Select Patient</label>
+                    <!-- <input type="text" name="name" class="form-control" id="nameInput" aria-describedby="name"
+                        placeholder="Patient's Name"> -->
+
+                    <select class="form-control" name="patientid">
+
+                        {% for item in patients %}
+                        <option value="{{ item.id }}">{{ item.patient_name }}</option>
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="historyArea">Prescription</label>
+                    <textarea name="prescription" class="form-control" id="historyArea" aria-describedby="history"
+                        placeholder="Prescription">
+
+                        </textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<div class="container p-5" style="margin-bottom: 10px;">
+
+    <div class="card">
+        <div class="card-header">
+            Manage Doctors
+        </div>
+        <div class="card-body">
+            <!-- <h5 class="card-title">You can edit, delete or update doctor's information here</h5> -->
+
+
+            <table id="doctorsTable" class="display nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Token Number</th>
+                        <th>Patient Name</th>
+                        <th>Prescription</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td>Row 1 Data 1</td>
+                        <td>Row 1 Data 2</td>
+                        <td>Row 1 Data 2</td>
+                        <td>Row 1 Data 2</td>
+                        <td>Row 1 Data 2</td>
+                    </tr> -->
+
+                    {% for row in prescriptions %}
+                    <tr>
+                        <!-- <option value="{{ item.id }}">{{ item.patient_name }}</option> -->
+                        <td>{{ row.token_number }}</td>
+                        <td>{{ row.patient_id }}</td>
+                        <td>{{ row.prescription }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $('#doctorsTable').DataTable({
+
+            responsive: true
+        });
+
+    });
+
+</script>
+
+{% endblock body_data %}

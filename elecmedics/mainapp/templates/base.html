@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>
+        {% block title%}{% endblock title %}
+    </title>
+    {% include 'include_files.html'%}
+</head>
+<body>
+
+    <div class="wrapper">
+		
+		<div id="side-nav-menu">
+        </div>
+
+		<div class="content">
+			<div id="top-bar">
+                {% include 'header.html'%}
+            </div>
+
+            {% block body_data %}{% endblock body_data %}
+
+            <footer class="footer-wrapper"> {% include 'footer.html'%} </footer>
+	   
+		</div>
+
+    </div>
+
+    
+</body>
+</html>

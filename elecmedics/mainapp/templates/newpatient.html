@@ -1,0 +1,123 @@
+{% extends 'base.html' %} {% block title%} Elecmedics {% endblock title %} {% block body_data %} {% load static %}
+
+
+
+<div class="container p-5">
+
+    <div class="card">
+        <div class="card-header">
+            Add new Patient
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Please fill the form to add a new patient</h5>
+            <form method="post" action="/app/addnewpatient/">
+
+                <div class="form-group">
+                    <label for="nameInput">Patient Name</label>
+                    <input type="text" name="name" class="form-control" id="nameInput" aria-describedby="name"
+                        placeholder="Patient's Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">CNIC</label>
+                    <input type="number" name="CNIC" class="form-control" id="exampleInputCNIC1"
+                        aria-describedby="CNICHelp" placeholder="Enter CNIC">
+                    <!-- <small id="CNICHelp" class="form-text text-muted">We'll never share this email with anyone -->
+                    <!-- else.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="fnameInput">Father's Name</label>
+                    <input type="text" name="fathername" class="form-control" id="fnameInput"
+                        aria-describedby="fathername" placeholder="Father's Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="mobileInput">Mobile Number</label>
+                    <input type="number" name="mobilenumber" class="form-control" id="mobileInput"
+                        aria-describedby="mobilenumber" placeholder="Mobile Number">
+                </div>
+
+                <div class="form-group">
+                    <label for="historyArea">History</label>
+                    <textarea name="history" class="form-control" id="historyArea" aria-describedby="history"
+                        placeholder="History">
+
+                        </textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<div class="container p-5" style="margin-bottom: 10px;">
+
+    <div class="card">
+        <div class="card-header">
+            Manage Doctors
+        </div>
+        <div class="card-body">
+            <!-- <h5 class="card-title">You can edit, delete or update doctor's information here</h5> -->
+
+
+            <table id="doctorsTable" class="display nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Sr#</th>
+                        <th>Patient Name</th>
+                        <th>CNIC</th>
+                        <th>Father's Name</th>
+                        <th>Mobile Number</th>
+                        <th>History</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td>Row 1 Data 1</td>
+                        <td>Row 1 Data 2</td>
+                        <td>Row 1 Data 2</td>
+                        <td>Row 1 Data 2</td>
+                        <td>Row 1 Data 2</td>
+                    </tr> -->
+
+                    {% for row in patients %}
+                    <tr>
+                        <!-- <option value="{{ item.id }}">{{ item.patient_name }}</option> -->
+                        <td>{{ row.id }}</td>
+                        <td>{{ row.patient_name }}</td>
+                        <td>{{ row.cnic }}</td>
+                        <td>{{ row.father_name }}</td>
+                        <td>{{ row.mobile_number }}</td>
+                        <td>{{ row.history }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $('#doctorsTable').DataTable({
+
+            responsive: true
+        });
+
+    });
+
+</script>
+
+{% endblock body_data %}
